@@ -1,0 +1,302 @@
+ [
+  {
+    "id": 1,
+    "title": "Nike Air Zoom Pegasus",
+    "price": 4500,
+    "discount": 10,
+    "rating": 4.8,
+    "sold": 150,
+    "location": "Lilir Mor",
+    "image": "/public/shoes/shoes-01.jpeg"
+  },
+  {
+    "id": 2,
+    "title": "Adidas Ultraboost 22",
+    "price": 5200,
+    "discount": 15,
+    "rating": 4.9,
+    "sold": 85,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb"
+  },
+  {
+    "id": 3,
+    "title": "Classic Black Loafers",
+    "price": 2200,
+    "discount": 5,
+    "rating": 4.5,
+    "sold": 210,
+    "location": "Modern Mor",
+    "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509"
+  },
+  {
+    "id": 4,
+    "title": "Puma Street Sneakers",
+    "price": 3200,
+    "discount": 20,
+    "rating": 4.3,
+    "sold": 120,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a"
+  },
+  {
+    "id": 5,
+    "title": "Formal Brown Oxford",
+    "price": 2800,
+    "discount": 0,
+    "rating": 4.7,
+    "sold": 45,
+    "location": "Gultuli Mor",
+    "image": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4"
+  },
+  {
+    "id": 6,
+    "title": "Casual White Canvas",
+    "price": 1200,
+    "discount": 10,
+    "rating": 4.1,
+    "sold": 300,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86"
+  },
+  {
+    "id": 7,
+    "title": "High-Top Basketball Shoes",
+    "price": 6500,
+    "discount": 25,
+    "rating": 4.9,
+    "sold": 30,
+    "location": "Kalitola Mor",
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772"
+  },
+  {
+    "id": 8,
+    "title": "Outdoor Trekking Boots",
+    "price": 3800,
+    "discount": 12,
+    "rating": 4.6,
+    "sold": 65,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1520639889456-e624f1c7c6ce"
+  },
+  {
+    "id": 9,
+    "title": "Premium Leather Sandals",
+    "price": 1500,
+    "discount": 5,
+    "rating": 4.4,
+    "sold": 180,
+    "location": "Nimtola",
+    "image": "https://images.unsplash.com/photo-1603487742131-4160ec999306"
+  },
+  {
+    "id": 10,
+    "title": "Reebok Workout Plus",
+    "price": 4100,
+    "discount": 18,
+    "rating": 4.7,
+    "sold": 95,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1511551203524-9a24350a5771"
+  },
+  {
+    "id": 11,
+    "title": "Vans Old Skool",
+    "price": 2900,
+    "discount": 10,
+    "rating": 4.5,
+    "sold": 420,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77"
+  },
+  {
+    "id": 12,
+    "title": "Converse All Star",
+    "price": 2500,
+    "discount": 8,
+    "rating": 4.4,
+    "sold": 500,
+    "location": "Station Road",
+    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d"
+  },
+  {
+    "id": 13,
+    "title": "Lotto Speed Runner",
+    "price": 1800,
+    "discount": 30,
+    "rating": 4.2,
+    "sold": 110,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1562183241-b937e95585b6"
+  },
+  {
+    "id": 14,
+    "title": "Bata Comfit Premium",
+    "price": 3200,
+    "discount": 0,
+    "rating": 4.8,
+    "sold": 75,
+    "location": "Hospital Road",
+    "image": "https://images.unsplash.com/photo-1518002171953-a080ee817e1f"
+  },
+  {
+    "id": 15,
+    "title": "Apex Maverick Casual",
+    "price": 2600,
+    "discount": 15,
+    "rating": 4.3,
+    "sold": 140,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1531310197839-ccf54634509e"
+  },
+  {
+    "id": 16,
+    "title": "Timberland Earthkeeper",
+    "price": 7500,
+    "discount": 20,
+    "rating": 4.9,
+    "sold": 25,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2"
+  },
+  {
+    "id": 17,
+    "title": "New Balance 574",
+    "price": 4800,
+    "discount": 10,
+    "rating": 4.6,
+    "sold": 60,
+    "location": "Phulbari Bus Stand",
+    "image": "https://images.unsplash.com/photo-1539185441755-769473a23570"
+  },
+  {
+    "id": 18,
+    "title": "Crocs LiteRide",
+    "price": 1900,
+    "discount": 5,
+    "rating": 4.5,
+    "sold": 280,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1595341888016-a392ef81b7de"
+  },
+  {
+    "id": 19,
+    "title": "Under Armour Curry 8",
+    "price": 8200,
+    "discount": 12,
+    "rating": 5.0,
+    "sold": 15,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+  },
+  {
+    "id": 20,
+    "title": "Skechers GoWalk 5",
+    "price": 3900,
+    "discount": 15,
+    "rating": 4.7,
+    "sold": 115,
+    "location": "Zila School Mor",
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2"
+  },
+  {
+    "id": 21,
+    "title": "Formal Patent Leather",
+    "price": 3500,
+    "discount": 5,
+    "rating": 4.4,
+    "sold": 40,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1449505278894-297fdb3edbc1"
+  },
+  {
+    "id": 22,
+    "title": "Asics Gel-Kayano",
+    "price": 5800,
+    "discount": 20,
+    "rating": 4.8,
+    "sold": 55,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1556906781-9a412961c28c"
+  },
+  {
+    "id": 23,
+    "title": "Flip-Flops Beach Edition",
+    "price": 450,
+    "discount": 0,
+    "rating": 3.9,
+    "sold": 600,
+    "location": "Goshala Mor",
+    "image": "https://images.unsplash.com/photo-1591533985302-39f82855f41c"
+  },
+  {
+    "id": 24,
+    "title": "Dr. Martens Boots",
+    "price": 9500,
+    "discount": 15,
+    "rating": 4.9,
+    "sold": 12,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1595461135849-bf08893fdc2c"
+  },
+  {
+    "id": 25,
+    "title": "Casual Slip-ons",
+    "price": 1400,
+    "discount": 10,
+    "rating": 4.2,
+    "sold": 220,
+    "location": "Balubari",
+    "image": "https://images.unsplash.com/photo-1544648151-510065a78601"
+  },
+  {
+    "id": 26,
+    "title": "Fila Disruptor II",
+    "price": 3700,
+    "discount": 25,
+    "rating": 4.4,
+    "sold": 88,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1512374382149-4332c6c02151"
+  },
+  {
+    "id": 27,
+    "title": "Mizuno Wave Rider",
+    "price": 4600,
+    "discount": 10,
+    "rating": 4.6,
+    "sold": 42,
+    "location": "Chawkbazar",
+    "image": "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111"
+  },
+  {
+    "id": 28,
+    "title": "Salomon Speedcross",
+    "price": 6200,
+    "discount": 15,
+    "rating": 4.8,
+    "sold": 28,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1565814636199-ae8133055c1c"
+  },
+  {
+    "id": 29,
+    "title": "Gucci Style Sneakers",
+    "price": 12000,
+    "discount": 5,
+    "rating": 5.0,
+    "sold": 8,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a"
+  },
+  {
+    "id": 30,
+    "title": "Denim High-Tops",
+    "price": 2100,
+    "discount": 10,
+    "rating": 4.3,
+    "sold": 160,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+  }
+]
