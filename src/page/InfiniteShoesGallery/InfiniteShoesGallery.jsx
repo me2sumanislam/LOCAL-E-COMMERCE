@@ -1,15 +1,13 @@
  import React, { useEffect, useState } from 'react';
-import ProductModal from '../ProductModal/ProductModal';
-// এখানে ProductModal ইমপোর্ট করতে হবে, কারণ আপনি কার্ডে ক্লিক করলে এটি দেখাবেন
+import ProductModal from '../ProductModal/ProductModal'; // নিশ্চিত হয়ে নিন পাথ ঠিক আছে
 
-
-const Home = () => {
+const InfiniteShoesGallery = () => {
   const [shoes, setShoes] = useState([]);
   const [displayCount, setDisplayCount] = useState(10); 
   const [isScrolling, setIsScrolling] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null); // মোডাল ডেটার জন্য
 
-  // ১. ডেটা লোড করা (public ফোল্ডারের জন্য শুধু /Data.json দিতে হয়)
+  // ১. ডেটা লোড করা (public ফোল্ডারের জন্য শুধু /Data.json)
   useEffect(() => {
     fetch('/Data.json') 
       .then((res) => res.json())
@@ -50,18 +48,17 @@ const Home = () => {
         {shoes.slice(0, displayCount).map((shoe) => (
           <div 
             key={shoe.id} 
-            onClick={() => setSelectedProduct(shoe)} // কার্ডে ক্লিক করলে মোডাল সেট হবে
+            onClick={() => setSelectedProduct(shoe)} // কার্ডে ক্লিক করলে মোডাল ওপেন হবে
             className="bg-white rounded-md overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-shadow"
           >
              <div className="aspect-square bg-gray-200">
                <img src={shoe.image} alt={shoe.title} className="w-full h-full object-cover" />
              </div>
              <div className="p-2">
-                <h2 className="text-[13px] line-clamp-2 h-9 text-gray-800 font-medium">
-                  {shoe.title}
-                </h2>
+                <h2 className="text-[13px] line-clamp-2 h-9 text-gray-800 font-medium">{shoe.title}</h2>
                 <div className="flex items-center gap-1 mt-1">
                   <p className="text-orange-500 font-bold">৳{shoe.price}</p>
+                  <p className="text-[10px] text-gray-400 line-through">৳{shoe.price + 200}</p>
                 </div>
              </div>
           </div>
@@ -85,7 +82,7 @@ const Home = () => {
         </div>
       )}
 
-      {/* ৪. মোডাল কানেকশন */}
+      {/* মোডাল কানেকশন */}
       <ProductModal 
         product={selectedProduct} 
         isOpen={!!selectedProduct} 
@@ -96,4 +93,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default InfiniteShoesGallery;
