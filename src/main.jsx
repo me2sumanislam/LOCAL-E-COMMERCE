@@ -3,25 +3,22 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
 
-// React Toastify-er proyojoniyo imports
+// Toastify
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    {/* ToastContainer ekhane thakle pura app theke toast call kora jabe */}
+
     <ToastContainer 
-      position="top-right" 
-      autoClose={2000} 
-      hideProgressBar={false}
-      newestOnTop={false}
+      position="top-right"
+      autoClose={1500}        // ✅ faster UX
+      hideProgressBar={true}  // ✅ cleaner UI
+      newestOnTop
       closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
       pauseOnHover
-      theme="light"
+      theme="colored"         // ✅ better look
     />
-  </StrictMode>,
+  </StrictMode>
 );
