@@ -1,97 +1,122 @@
- import React, { useEffect, useState } from 'react';
+ import React, { useEffect, useState, useCallback } from 'react';
 import ProductModal from '../ProductModal/ProductModal';
-// এখানে ProductModal ইমপোর্ট করতে হবে, কারণ আপনি কার্ডে ক্লিক করলে এটি দেখাবেন
-
+import MyCart from '../MyCart/MyCard';
+import { toast } from 'react-toastify'; // Toastify import kora hoyeche
 
 const Home = () => {
   const [shoes, setShoes] = useState([]);
-  const [displayCount, setDisplayCount] = useState(10); 
+  const [displayCount, setDisplayCount] = useState(10);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null); // মোডাল ডেটার জন্য
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
-  // ১. ডেটা লোড করা (public ফোল্ডারের জন্য শুধু /Data.json দিতে হয়)
+  // ১. ডেটা ফেচিং
   useEffect(() => {
-    fetch('/Data.json') 
+    let isMounted = true;
+    fetch('/Data.json')
       .then((res) => res.json())
-      .then((data) => setShoes(data))
+      .then((data) => {
+        if (isMounted) setShoes(data);
+      })
       .catch((err) => console.error("Fetch error:", err));
+    return () => { isMounted = false; };
   }, []);
 
-  // ২. স্ক্রল ডিটেক্ট করার ফাংশন
-  useEffect(() => {
-    const handleScroll = () => {
-      if (
-        window.innerHeight + document.documentElement.scrollTop + 100 
-        >= document.documentElement.offsetHeight
-      ) {
-        if (!isScrolling && displayCount < shoes.length) {
-          loadMore();
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isScrolling, displayCount, shoes.length]);
-
-  const loadMore = () => {
+  // ২. লোড মোর ফাংশন
+  const loadMore = useCallback(() => {
+    if (isScrolling || displayCount >= shoes.length) return;
     setIsScrolling(true);
     setTimeout(() => {
       setDisplayCount((prev) => prev + 10);
       setIsScrolling(false);
-    }, 1500);
+    }, 500); // লোডিং টাইম আরও ফাস্ট করা হয়েছে
+  }, [isScrolling, displayCount, shoes.length]);
+
+  // ৩. স্ক্রল হ্যান্ডলার (Optimized)
+  useEffect(() => {
+    const handleScroll = () => {
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+      if (scrollTop + clientHeight >= scrollHeight - 300) { // একটু আগে থেকেই লোড শুরু হবে
+        loadMore();
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loadMore]);
+
+  // ৪. কার্ট লজিক + Toastify
+  const addToCart = (product) => {
+    if (!product) return;
+
+    setCartItems((prev) => {
+      const exist = prev.find((x) => x.id === product.id);
+      if (exist) {
+        return prev.map((x) => x.id === product.id ? { ...x, quantity: x.quantity + 1 } : x);
+      }
+      return [...prev, { ...product, quantity: 1 }];
+    });
+
+    // Toast Notification
+    toast.success(`${product.title} কার্টে যোগ করা হয়েছে!`, {
+      position: "top-right",
+      autoClose: 1500,
+      theme: "colored",
+    });
+
+    setIsCartOpen(true);
   };
 
   return (
     <div className="bg-gray-100 min-h-screen p-2 md:p-10">
-      
-      {/* প্রোডাক্ট গ্রিড */}
+      {/* Product Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-4">
         {shoes.slice(0, displayCount).map((shoe) => (
           <div 
             key={shoe.id} 
-            onClick={() => setSelectedProduct(shoe)} // কার্ডে ক্লিক করলে মোডাল সেট হবে
-            className="bg-white rounded-md overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-shadow"
+            onClick={() => setSelectedProduct(shoe)} 
+            className="bg-white rounded-md overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer group"
           >
-             <div className="aspect-square bg-gray-200">
-               <img src={shoe.image} alt={shoe.title} className="w-full h-full object-cover" />
+             <div className="aspect-square bg-gray-200 overflow-hidden">
+               <img 
+                 src={shoe.image} 
+                 alt={shoe.title} 
+                 loading="lazy" 
+                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+               />
              </div>
              <div className="p-2">
-                <h2 className="text-[13px] line-clamp-2 h-9 text-gray-800 font-medium">
-                  {shoe.title}
-                </h2>
-                <div className="flex items-center gap-1 mt-1">
-                  <p className="text-orange-500 font-bold">৳{shoe.price}</p>
-                </div>
+                <h2 className="text-[13px] line-clamp-2 h-9 font-medium text-gray-800">{shoe.title}</h2>
+                <p className="text-orange-500 font-bold">৳{shoe.price}</p>
              </div>
           </div>
         ))}
       </div>
 
-      {/* স্ক্রল লোডিং */}
+      {/* Loading Spinner */}
       {isScrolling && (
-        <div className="flex justify-center items-center py-10">
-          <div className="flex flex-col items-center gap-2">
-            <span className="loading loading-dots loading-lg text-orange-500"></span>
-            <p className="text-sm text-gray-500 italic">নতুন প্রোডাক্ট খোঁজা হচ্ছে...</p>
-          </div>
+        <div className="flex justify-center py-5">
+          <span className="loading loading-spinner loading-md text-orange-500"></span>
         </div>
       )}
 
-      {/* সব ডেটা শেষ হয়ে গেলে */}
-      {!isScrolling && displayCount >= shoes.length && shoes.length > 0 && (
-        <div className="text-center py-10 text-gray-400 text-sm">
-          — আপনি সব প্রোডাক্ট দেখে ফেলেছেন —
-        </div>
-      )}
-
-      {/* ৪. মোডাল কানেকশন */}
+      {/* Components */}
       <ProductModal 
         product={selectedProduct} 
         isOpen={!!selectedProduct} 
-        onClose={() => setSelectedProduct(null)} 
+        onClose={() => setSelectedProduct(null)}
+        onOpenCart={() => {
+            addToCart(selectedProduct);
+            setSelectedProduct(null);
+        }} 
       />
-        
+
+      <MyCart 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+      />
     </div>
   );
 };
