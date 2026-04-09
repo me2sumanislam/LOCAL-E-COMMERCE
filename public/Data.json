@@ -298,5 +298,25 @@
     "sold": 160,
     "location": "Lilir Mor",
     "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+  },
+  {
+    "id": 30,
+    "title": "Denim High-Tops",
+    "price": 2100,
+    "discount": 10,
+    "rating": 4.3,
+    "sold": 160,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+  },
+  {
+    "id": 30,
+    "title": "Denim High-Tops",
+    "price": 2100,
+    "discount": 10,
+    "rating": 4.3,
+    "sold": 160,
+    "location": "Lilir Mor",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
   }
 ]
