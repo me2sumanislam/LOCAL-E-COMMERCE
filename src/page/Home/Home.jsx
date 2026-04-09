@@ -1,11 +1,13 @@
  import React, { useEffect, useState } from 'react';
+import { useOutletContext, useNavigate } from 'react-router-dom';
 import ProductModal from '../ProductModal/ProductModal';
-import MyCart from '../MyCart/MyCart';
 
-const Home = ({ cartItems, setCartItems, onProceedToCheckout }) => {
+const Home = () => {
   const [shoes, setShoes] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  
+  const { setCartItems, setIsCartOpen } = useOutletContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('/Data.json')
@@ -14,7 +16,6 @@ const Home = ({ cartItems, setCartItems, onProceedToCheckout }) => {
       .catch((err) => console.error('Error:', err));
   }, []);
 
-  // Normal Add to Cart logic
   const addToCart = (product) => {
     setCartItems((prev) => {
       const existing = prev.find((item) => item.id === product.id);
@@ -28,18 +29,23 @@ const Home = ({ cartItems, setCartItems, onProceedToCheckout }) => {
     setIsCartOpen(true);
   };
 
-  // Buy Now Logic: Sathe sathe checkout page-e niye jabe
+  // BUY NOW LOGIC FIX
   const handleBuyNow = (product) => {
     if (!product) return;
     
-    // ১. Cart update kora (shudhu ei product-ti diye)
-    setCartItems([{ ...product, quantity: 1 }]);
+    // ১. Shudhu ei product-ti niye ekta object banan
+    const buyNowItem = { ...product, quantity: 1 };
     
-    // ২. Checkout page open kora
-    onProceedToCheckout();
+    // ২. Cart update korun (background-er jonno)
+    setCartItems([buyNowItem]);
     
-    // ৩. Modal bondho kora
+    // ৩. Modal bondho korun
     setSelectedProduct(null);
+
+    // ৪. IMPORTANT: 'state' er maddhome data pathan jate checkout page-e instant pawa jay
+    navigate('/checkout', { 
+      state: { checkoutItems: [buyNowItem] } 
+    }); 
   };
 
   return (
@@ -66,7 +72,6 @@ const Home = ({ cartItems, setCartItems, onProceedToCheckout }) => {
         ))}
       </div>
 
-      {/* Product Modal with Buy Now support */}
       <ProductModal
         product={selectedProduct}
         isOpen={!!selectedProduct}
@@ -75,15 +80,7 @@ const Home = ({ cartItems, setCartItems, onProceedToCheckout }) => {
           addToCart(selectedProduct);
           setSelectedProduct(null);
         }}
-        onBuyNow={() => handleBuyNow(selectedProduct)} // Ei function-ti pass kora hoyeche
-      />
-
-      <MyCart
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        cartItems={cartItems}
-        setCartItems={setCartItems}
-        onCheckout={onProceedToCheckout}
+        onBuyNow={() => handleBuyNow(selectedProduct)} 
       />
     </div>
   );
