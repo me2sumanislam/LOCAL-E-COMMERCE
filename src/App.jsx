@@ -2,18 +2,32 @@
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from './page/Home/Home';
-
-// Note: Home.jsx e bhetorei MyCart/Checkout modal thakle ekhane dorkar nei। 
-// Kintu jodi ekhane rakhte chan, tobe props pass kortei hobe।
+import FinalCheckoutPage from '../src/page/Cart/FinalCheckOut'; // Import path thik kora hoyeche
 
 function App() {
-  return (
-    <div className="min-h-screen">
-      {/* Apnar Home.jsx-er bhetorei cartItems ebong isCartOpen state gulo ache, 
-         tai Home component eka-i shob handle korte parbe। 
-      */}
-      <Home />
+  // ১. Checkout page-e jawar state
+  const [isCheckout, setIsCheckout] = useState(false);
+  
+  // ২. Cart items state jeta duita page-ei share hobe
+  const [cartItems, setCartItems] = useState([]);
 
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* ৩. Conditional Rendering: isCheckout true hole Checkout page dekhabe */}
+      {isCheckout ? (
+        <FinalCheckoutPage 
+          cartItems={cartItems} 
+          onBack={() => setIsCheckout(false)} 
+        />
+      ) : (
+        <Home 
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+          onProceedToCheckout={() => setIsCheckout(true)} 
+        />
+      )}
+
+      {/* Notifications */}
       <ToastContainer
         position="top-right"
         autoClose={1500}
