@@ -1,1 +1,4 @@
- 
+ .container {
+  scroll-behavior: smooth;
+  will-change: transform; /* Keval proyojon holei use korun */
+}
