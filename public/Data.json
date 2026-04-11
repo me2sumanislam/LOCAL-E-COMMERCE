@@ -1,13 +1,13 @@
  [
   {
     "id": 1,
-    "title": "Nike Air Zoom Pegasus",
-    "price": 4500,
-    "discount": 10,
-    "rating": 4.8,
-    "sold": 150,
+    "title": "Adidas Ultraboost 22",
+    "price": 5200,
+    "discount": 15,
+    "rating": 4.9,
+    "sold": 85,
     "location": "Lilir Mor",
-    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d"
+    "image": "https://images.unsplash.com/photo-1587563871167-1ee9c731aefb"
   },
   {
     "id": 2,
