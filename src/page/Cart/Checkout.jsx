@@ -1,6 +1,8 @@
  import React, { useState, useEffect, useMemo } from 'react';
 import CartItem from './CartItem';
-
+navigate('/checkout', {
+  state: { checkoutItems: selectedItems }
+});
 const Checkout = ({ isOpen, onClose, cartItems, setCartItems }) => {
   // Selection Logic
   const [selectedIds, setSelectedIds] = useState([]);

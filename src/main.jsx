@@ -1,22 +1,19 @@
  import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'; // Router import korun
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
-// Layouts & Pages
-import MainLayout from '../src/MainLayout/MainLayout.jsx';
-import Home from '../src/page/Home/Home.jsx'
-import FinalCheckoutPage from '../src/page/Cart/FinalCheckOut.jsx';
+import MainLayout from './MainLayout/MainLayout.jsx';
+import Home from './page/Home/Home.jsx';
+import FinalCheckoutPage from './page/Cart/FinalCheckOut.jsx';
 
-// Toastify
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// ১. Router Setup (Outlet-er bhetore ki ki thakbe ta ekhane set kora)
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />, // Frame (Header, Footer, Outlet)
+    element: <MainLayout />,
     children: [
       {
         path: "/",
@@ -26,22 +23,34 @@ const router = createBrowserRouter([
         path: "/checkout",
         element: <FinalCheckoutPage />,
       },
+      {
+        path: "/success",
+        element: (
+          <div className="h-screen flex items-center justify-center text-green-600 text-3xl font-bold">
+            Payment Successful 🎉
+          </div>
+        ),
+      },
+      {
+        path: "/fail",
+        element: (
+          <div className="h-screen flex items-center justify-center text-red-600 text-3xl font-bold">
+            Payment Failed ❌
+          </div>
+        ),
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* ২. App-er poriborte RouterProvider use korun */}
     <RouterProvider router={router} />
 
-    <ToastContainer 
+    <ToastContainer
       position="top-right"
-      autoClose={1500} 
-      hideProgressBar={true} 
-      newestOnTop
-      closeOnClick
-      pauseOnHover
+      autoClose={1500}
+      hideProgressBar
       theme="colored"
     />
   </StrictMode>
