@@ -7,7 +7,7 @@
     "rating": 4.8,
     "sold": 150,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-01.jpeg"
+    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d"
   },
   {
     "id": 2,
