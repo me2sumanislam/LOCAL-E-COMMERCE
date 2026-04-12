@@ -10,7 +10,7 @@ const Header = ({ cartCount, onOpenCart, searchQuery, setSearchQuery }) => {
         <Link to="/" className="flex items-center gap-2 flex-shrink-0">
           
           <img 
-            src="/public/icone.png"   // 👉 public folder থেকে আসবে
+            src="/icone.png"   // 👉 public folder থেকে আসবে
             alt="logo" 
             className="w-25 object-contain"
           />

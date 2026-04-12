@@ -61,7 +61,7 @@ const FinalCheckoutPage = () => {
       {/* Header */}
       <div className="bg-white p-4 flex items-center gap-4 sticky top-0 z-10 border-b">
         <button onClick={() => navigate(-1)} className="text-2xl">←</button>
-        <h1 className="text-xl font-bold">অর্ডার কনফার্ম করুন</h1>
+        <h1 className="text-xl font-bold">অর্ডার কনফার্ম করুন/Order Confirm</h1>
       </div>
 
       {/* Product List */}
@@ -93,17 +93,17 @@ const FinalCheckoutPage = () => {
       {/* Payment Summary */}
       <div className="bg-white mt-2 p-4 space-y-3">
         <div className="flex justify-between text-gray-600">
-          <span>সাব-টোটাল</span>
+          <span>সাব-টোটাল/SubTotal</span>
           <span>৳{subtotal}</span>
         </div>
 
         <div className="flex justify-between text-gray-600">
-          <span>ডেলিভারি চার্জ</span>
+          <span>ডেলিভারি চার্জ/Delivery Charge</span>
           <span>৳{shippingFee}</span>
         </div>
 
         <div className="flex justify-between font-bold text-lg pt-3 border-t">
-          <span>সর্বমোট</span>
+          <span>সর্বমোট/Total</span>
           <span className="text-orange-600">৳{total}</span>
         </div>
       </div>
@@ -123,7 +123,7 @@ const FinalCheckoutPage = () => {
           disabled={selectedItems.length === 0}
           className="bg-orange-600 text-white px-10 py-4 rounded-xl font-bold text-lg active:scale-95 transition-all shadow-lg shadow-orange-100 disabled:bg-gray-300"
         >
-          অর্ডার করুন
+       Confirm
         </button>
       </div>
     </div>

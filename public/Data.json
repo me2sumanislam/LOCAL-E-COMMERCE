@@ -18,7 +18,7 @@
     "rating": 4.3,
     "sold": 120,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-4.jpeg"
+    "image": "/shoes/shoes-4.jpeg"
   },
   {
     "id": 3,
@@ -28,7 +28,7 @@
     "rating": 4.7,
     "sold": 45,
     "location": "Gultuli Mor",
-    "image": "/public/shoes/shoes-5.jpeg"
+    "image": "/shoes/shoes-5.jpeg"
   },
   {
     "id": 4,
@@ -38,7 +38,7 @@
     "rating": 4.1,
     "sold": 300,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-6.jpeg"
+    "image": " /shoes/shoes-6.jpeg"
   },
   {
     "id": 5,
@@ -48,7 +48,7 @@
     "rating": 4.9,
     "sold": 30,
     "location": "Kalitola Mor",
-    "image": "/public/shoes/shoes-7.jpeg"
+    "image": "/shoes/shoes-7.jpeg"
   },
   {
     "id": 6,
@@ -58,7 +58,7 @@
     "rating": 4.6,
     "sold": 65,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-8.jpeg"
+    "image": "/shoes/shoes-8.jpeg"
   },
   {
     "id": 7,
@@ -68,7 +68,7 @@
     "rating": 4.4,
     "sold": 180,
     "location": "Nimtola",
-    "image": "/public/shoes/shoes-10.jpeg"
+    "image": " /shoes/shoes-10.jpeg"
   },
   {
     "id": 8,
@@ -78,7 +78,7 @@
     "rating": 4.7,
     "sold": 95,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-10.jpeg"
+    "image": "/shoes/shoes-10.jpeg"
   },
   {
     "id": 9,
@@ -88,7 +88,7 @@
     "rating": 4.5,
     "sold": 420,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-11.jpeg"
+    "image": "/shoes/shoes-11.jpeg"
   },
   {
     "id": 10,
@@ -98,7 +98,7 @@
     "rating": 4.4,
     "sold": 500,
     "location": "Station Road",
-    "image": "/public/shoes/shoes-12.jpeg"
+    "image": "/shoes/shoes-12.jpeg"
   },
   {
     "id": 11,
@@ -108,7 +108,7 @@
     "rating": 4.2,
     "sold": 110,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-13.jpeg"
+    "image": "/shoes/shoes-13.jpeg"
   },
   {
     "id": 12,
@@ -118,7 +118,7 @@
     "rating": 4.8,
     "sold": 75,
     "location": "Hospital Road",
-    "image": "/public/shoes/shoes-14.jpeg"
+    "image": "/shoes/shoes-14.jpeg"
   },
   {
     "id": 13,
@@ -208,7 +208,7 @@
     "rating": 3.9,
     "sold": 600,
     "location": "Goshala Mor",
-    "image": "/public/shoes/shoes-23.jpeg"
+    "image": "/shoes/shoes-23.jpeg"
   },
   {
     "id": 22,
@@ -218,7 +218,7 @@
     "rating": 4.9,
     "sold": 12,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-24.jpeg"
+    "image": "/shoes/shoes-24.jpeg"
   },
   {
      "id": 23,
@@ -228,7 +228,7 @@
     "rating": 4.2,
     "sold": 220,
     "location": "Balubari",
-    "image": "/public/shoes/shoes-01.jpeg"
+    "image": "/shoes/shoes-01.jpeg"
   },
   {
     "id": 24,
@@ -238,7 +238,7 @@
     "rating": 4.4,
     "sold": 88,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-24.jpeg"
+    "image": "/shoes/shoes-24.jpeg"
   },
   {
     "id": 25,
@@ -278,7 +278,7 @@
     "rating": 4.3,
     "sold": 160,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-28.jpeg"
+    "image": "/shoes/shoes-28.jpeg"
   },
   {
     "id":29,
@@ -288,7 +288,7 @@
     "rating": 4.3,
     "sold": 160,
     "location": "Lilir Mor",
-    "image": "/public/shoes/shoes-29.jpeg"
+    "image": "/shoes/shoes-29.jpeg"
   },
   {
     "id": 30,
@@ -318,6 +318,6 @@
     "rating": 4.6,
     "sold": 90,
     "location": "Modern Mor",
-    "image": "/public/shoes/shoes-16.jpeg"
+    "image": "/shoes/shoes-16.jpeg"
   }
 ]
