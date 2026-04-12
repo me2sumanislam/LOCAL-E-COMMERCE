@@ -16,7 +16,7 @@ const Header = ({ cartCount, onOpenCart, searchQuery, setSearchQuery }) => {
           />
 
           <h1 className="text-2xl font-black text-orange-600 tracking-tighter">
-            Foot<span className="text-gray-800">.ware</span>
+            Fit<span className="text-gray-800">.Foot</span>
           </h1>
 
         </Link>
